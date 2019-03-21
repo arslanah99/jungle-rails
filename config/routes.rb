@@ -18,18 +18,9 @@ Rails.application.routes.draw do
     resources  :categories,  except: [:edit, :update, :show]
   end
 
-  GifVault::Application.routes.draw do
-
-    root to: 'gif#cool'
-    get '/login' => 'sessions#new'
-    post '/login' => 'sessions#create'
-    get '/logout' => 'sessions#destroy'
-  
-    get '/signup' => 'users#new'
-    post '/users' => 'users#create'
-
-  end
-
+ resources :users, only: [:edit, :update, :new, :create, :show]
+ resources :sessions, only: [:new, :create, :destroy]
+ get 'sessions/:id' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
