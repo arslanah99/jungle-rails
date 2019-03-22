@@ -39,5 +39,16 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :port                 => 587,
+      :domain               => 'ethereal.email',
+      :user_name            => 'hildegard48@ethereal.email',
+      :password             => 'rkjHR2S5phKb2puM6N',
+      :authentication => 'plain',
+      :enable_starttls_auto => true
+}
+
+
   config.web_console.whitelisted_ips = ['10.0.2.0/24']
 end

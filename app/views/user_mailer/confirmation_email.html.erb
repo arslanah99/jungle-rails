@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+   <section class="orders-show">
+
+  <header class="page-header">
+
+  </header>
+
+  <div class="order-summary jumbotron">
+    <h4>Thank you for your order!</h4>
+<% @order.line_items.each do |order| %>
+
+ <% end %>
+<div class="panel panel-default items">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="2">Product</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.line_items.each do |item| %>
+        <%= render 'coolguy68', product: item.product, quantity: item[:quantity].to_i %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+      <%= @order[:email] %>
+        <th colspan="4">
+          TOTAL:
+        </th>
+        <th>
+          <%= @order[:total_cents] / 100.0 %>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+  </div>
+
+  <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
+
+</section>
+
+  </body>
+</html>
