@@ -25,12 +25,14 @@
         </dl>
           <dt>Reviews:</dt>
           <tbody>
+          <% if current_user %>
           <%= form_for :review, url:"/products/#{@product.id}/reviews" do |f| %>
               Description: <%= f.text_field :description %><br />
               Rating: <%= f.select :rating, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]] %><br />
               <%= f.submit %>
             <% end %>
-          <% @product.review.each do |review|%>
+            <% end %>
+          <% @product.review.reverse.each do |review|%>
             <div>
             <dd><b>Rating:</b> <%= review.rating %>/5</dd>
             <dd><b>Description:</b> <%= review.description %></dd>
