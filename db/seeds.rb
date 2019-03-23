@@ -40,7 +40,8 @@ cat1.products.create!({
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel1.jpg'),
   quantity: 10,
-  price: 64.99
+  price: 64.99,
+
 })
 
 cat1.products.create!({
@@ -130,6 +131,28 @@ cat3.products.create!({
   image: open_asset('furniture3.jpg'),
   quantity: 23,
   price: 2_483.75
+})
+
+
+Review.create!({
+ product_id: 3,
+ user_id: 1,
+  description: 'Lame AF',
+   rating: 2
+})
+
+Review.create!({
+ product_id: 2,
+ user_id: 3,
+  description: 'WEIRD AF',
+   rating: 5
+})
+
+Review.create!({
+ product_id: 1,
+ user_id: 2,
+  description: 'BEST PRODUCT EVER!',
+   rating: 4
 })
 
 
