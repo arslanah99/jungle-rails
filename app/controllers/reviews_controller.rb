@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+    before_filter :create, :only => :create
+    before_filter :destroy, :only => :destroy
 
     def create
         @review = Review.new(review_params)

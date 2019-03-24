@@ -5,6 +5,6 @@ class UserMailer < ApplicationMailer
       @user = user
       @order = order
       @url  = 'no-reply@jungle.com'
-      mail(to: 'hildegard48@ethereal.email', subject:'Order # '@order.id)
+      mail(to: @user.email, subject:"Order # #{@order.id}")
     end
   end

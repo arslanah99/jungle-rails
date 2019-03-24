@@ -22,6 +22,8 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+            <dt>Average Ratings</dt>
+            <dd><%= number_with_precision(@avg_rating, precision:2) %></dd>
         </dl>
           <dt>Reviews:</dt>
           <tbody>
@@ -44,7 +46,6 @@
               <% end %>
             </div>
             <% end %>
-            <hr>
           </tbody>
       </div>
     </div>

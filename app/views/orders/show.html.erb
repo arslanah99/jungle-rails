@@ -5,7 +5,7 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+    <h4>Thank you for your order <%=@order[:email] %>!</h4>
 <% @order.line_items.each do |order| %>
 
  <% end %>
@@ -26,7 +26,6 @@
     </tbody>
     <tfoot>
       <tr>
-      <%= @order[:email] %>
         <th colspan="4">
           TOTAL:
         </th>
