@@ -2,6 +2,9 @@
 
 A mini e-commerce application built with Rails 4.2.
 
+![ScreenShot of item](https://github.com/arslanah99/jungle-rails/blob/master/docs/Screenshot%20from%202019-03-23%2019-52-04.png)
+![ScreenShot of shop](https://github.com/arslanah99/jungle-rails/blob/master/docs/Screenshot%20from%202019-03-23%2019-52-36.png)
+![ScreenShot of cart](https://github.com/arslanah99/jungle-rails/blob/master/docs/Screenshot%20from%202019-03-23%2019-52-59.png)
 
 ## Setup
 
