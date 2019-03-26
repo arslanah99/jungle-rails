@@ -16,16 +16,14 @@ RSpec.feature "ProductDetails", type: :feature, js:true do
       )
     end
 end
-
-scenario "They see all productdetails when button clicked" do
+scenario "They see all the cart item update" do
   visit root_path
-  # within('.product') do
-  # click_link 'Details'
-  # end
-  first('article.product').click_link('Details')
 
-  sleep 3
-  # save_screenshot
-  expect(page).to have_css 'link_to product'
+  first('article.product').click_button('Add')
+
+  sleep 5
+  save_screenshot
+
+  expect(page).to have_text 'My Cart (1)'
 end
 end
